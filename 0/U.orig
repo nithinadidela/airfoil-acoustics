@@ -1,0 +1,78 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    bottom
+    {
+        type            symmetryPlane;
+    }
+
+    right
+    {
+        type            zeroGradient;
+    }
+
+    top
+    {
+        type            symmetryPlane;
+    }
+
+    left
+    {
+      type            uniformFixedValue;
+        uniformValue    constant (1 0 0);
+        /*type fixedProfile;
+        profile csvFile;
+        profileCoeffs
+        {
+          nHeaderLine 0;
+          refColumn 0;
+          componentColumns 3(1 2 3);
+          separator ",";
+          mergeSeparators 0;
+          file "0/Uprofile.csv";
+        }
+        direction (0 1 0);
+        origin 0,0,0;*/
+
+    }
+
+    flatplate
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);  // no-slip condition (wall)
+    }
+
+    defaultFaces
+    {
+        type            empty;
+    }
+    front
+    {
+        type            empty;
+    }
+    back
+    {
+        type            empty;
+    }
+}
+
+// ************************************************************************* //
