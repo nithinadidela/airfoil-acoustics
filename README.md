@@ -5,7 +5,7 @@ This project is a part of my course titled 'Gas Dynamics' at the school of Mecha
 The first half of the project deals with producing pressure field for the flow over a symmetric airfoil NACA 0012 which is presented in this code.
 The second half deals with the production of acoustic field for the corresponding pressure field which is expected to be done by May 2020.
 
-* Authors: Nithin Adidela
+* Author: Nithin Adidela
 
 * email: nithin.adiela.16003@iitgoa.ac.in
 
